@@ -18,9 +18,12 @@ COLUMNS_PER_ROW = 4
 
 
 def factorial(n: int) -> int:
-    """Return the factorial of a non-negative integer n."""
+    """Return the factorial of a non-negative integer n.
+    
+    Returns -1 for invalid inputs (negative or non-integer values).
+    """
     if not isinstance(n, int) or n < 0:
-        raise ValueError("factorial() only accepts non-negative integers.")
+        return -1
     result = 1
     for i in range(2, n + 1):
         result *= i
